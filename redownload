@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e
+
+oldpwd="$(pwd)"
+cd "$(dirname "$0")"
+
+./delete.py
+./download
+
+cd $oldpwd

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -e
+
+if ! command -v yt-dlp &>/dev/null; then
+    echo "E: \`yt-dlp' is not installed, please install it"
+    exit 1
+fi
+
+oldpwd="$(pwd)"
+
+cd "$(dirname "$0")"
+mkdir -p ./music
+cd ./music
+
+PlaylistId="$(cat ../PlaylistId.txt | tr -d " \t\n\r")"
+
+yt-dlp -i $PlaylistId --download-archive archive.txt -f bestaudio --progress
+
+cd $oldpwd
