@@ -7,6 +7,8 @@ if ! command -v yt-dlp &>/dev/null; then
     exit 1
 fi
 
+echo "music-lib Downloader version 1.0"
+
 oldpwd="$(pwd)"
 
 cd "$(dirname "$0")"

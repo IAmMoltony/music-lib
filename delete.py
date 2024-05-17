@@ -10,6 +10,7 @@ def fix_wd():
     os.chdir(dname)
 
 if __name__ == "__main__":
+    print("music-lib Deleter version 1.0")
     fix_wd()
 
     parser = argparse.ArgumentParser(description="Delete music from music-lib")

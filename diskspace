@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "music-lib Disk Space Checker version 1.0"
+
 oldpwd="$(pwd)"
 cd "$(dirname "$0")"
 echo "Music takes up $(du -shc ./music | cut -f1 | head -n 1) of space."

@@ -2,6 +2,8 @@
 
 set -e
 
+echo "music-lib Redownloader version 1.0"
+
 oldpwd="$(pwd)"
 cd "$(dirname "$0")"
 
