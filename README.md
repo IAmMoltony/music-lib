@@ -1,6 +1,8 @@
 
 # Music-lib
 
+[![CodeFactor](https://www.codefactor.io/repository/github/iammoltony/uptime-tool/badge)](https://www.codefactor.io/repository/github/iammoltony/uptime-tool)
+
 Tools for managing my music library
 
 ## Installation
