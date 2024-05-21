@@ -1,0 +1,8 @@
+music-lib Changelog
+
+May 21
+
+Downloader 1.0.1
+
+  Fixed SC2002 and SC2086
+  Now displays playlist ID

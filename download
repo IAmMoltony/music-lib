@@ -7,7 +7,7 @@ if ! command -v yt-dlp &>/dev/null; then
     exit 1
 fi
 
-echo "music-lib Downloader version 1.0"
+echo "music-lib Downloader version 1.0.1"
 
 oldpwd="$(pwd)"
 
@@ -15,8 +15,9 @@ cd "$(dirname "$0")"
 mkdir -p ./music
 cd ./music
 
-PlaylistId="$(cat ../PlaylistId.txt | tr -d " \t\n\r")"
+PlaylistId="$(< ../PlaylistId.txt tr -d " \t\n\r")"
+echo "Playlist Id: $PlaylistId"
 
-yt-dlp -i $PlaylistId --download-archive archive.txt -f bestaudio --progress
+yt-dlp -i "$PlaylistId" --download-archive archive.txt -f bestaudio --progress
 
-cd $oldpwd
+cd "$oldpwd"
