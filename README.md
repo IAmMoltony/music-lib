@@ -1,4 +1,3 @@
-
 # Music-lib
 
 [![CodeFactor](https://www.codefactor.io/repository/github/iammoltony/music-lib/badge)](https://www.codefactor.io/repository/github/iammoltony/music-lib)
