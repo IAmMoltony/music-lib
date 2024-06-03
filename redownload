@@ -2,7 +2,7 @@
 
 set -e
 
-echo "music-lib Redownloader version 1.0"
+echo "music-lib Redownloader version 1.0.1"
 
 oldpwd="$(pwd)"
 cd "$(dirname "$0")"
@@ -10,4 +10,4 @@ cd "$(dirname "$0")"
 ./delete.py
 ./download
 
-cd $oldpwd
+cd "$oldpwd"

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "music-lib Disk Space Checker version 1.0"
+echo "music-lib Disk Space Checker version 1.0.1"
 
 oldpwd="$(pwd)"
 cd "$(dirname "$0")" || exit 1

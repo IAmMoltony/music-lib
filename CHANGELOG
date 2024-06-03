@@ -2,6 +2,10 @@ music-lib Changelog
 
 June 3
 
+Redownloader 1.0.1
+
+  Fixed SC2086
+
 Disk space checker 1.0.1
 
   Fixed SC2164 and SC2086
