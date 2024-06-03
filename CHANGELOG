@@ -2,6 +2,11 @@ music-lib Changelog
 
 June 3
 
+Deleter 1.0.1
+
+  Specify encoding when opening archive
+  Minor changes
+
 Redownloader 1.0.1
 
   Fixed SC2086

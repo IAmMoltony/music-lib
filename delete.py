@@ -10,7 +10,7 @@ def fix_wd():
     os.chdir(dname)
 
 if __name__ == "__main__":
-    print("music-lib Deleter version 1.0")
+    print("music-lib Deleter version 1.0.1")
     fix_wd()
 
     parser = argparse.ArgumentParser(description="Delete music from music-lib")
@@ -23,22 +23,24 @@ if __name__ == "__main__":
         print("Dry run mode enabled. No changes will be made.")
 
     ids = []
-    with open("./music/archive.txt", "r") as archive:
+    with open("./music/archive.txt", "r", encoding="utf8") as archive:
         archive_data = archive.read()
         ids = archive_data.split("\n")
-    ids = [id.removeprefix("youtube ") for id in ids] # Remove the "youtube " (note the space) prefix from IDs
+    ids = [id.removeprefix("youtube ") for id in ids] # Remove the "youtube " (note the space)
+                                                      # prefix from IDs
     ids = list(filter(None, ids)) # Remove any empty strings from IDs
 
     music_files = []
     music_dir = pathlib.Path("./music")
-    for id in ids:
-        pattern = f"*{id}*"
+    for song_id in ids:
+        pattern = f"*{song_id}*"
+        # TODO wtf
         file = ""
         for file in music_dir.glob(pattern):
             file = f"./music/{file.name}"
             break
         if not file:
-            print(f"(No music file found for id {id})")
+            print(f"(No music file found for id {song_id})")
             continue
         music_files.append(file)
 
