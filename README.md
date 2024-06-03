@@ -15,3 +15,4 @@ Tools for managing my music library
 - `download`: Download the music into `./music`. Depends on `yt-dlp`.
 - `delete.py`: Delete all music. This won't touch anything except for what you downloaded.
 - `redownload`: Delete all music and then download it again.
+- `diskspace`: Show how much disk space music takes up.
