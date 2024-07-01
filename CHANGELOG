@@ -1,6 +1,15 @@
 music-lib Changelog
 
-June 3
+July 1, 2024
+
+Downloaded 1.1
+
+  Added --verbose and --help flags
+  Added comments in the source code
+
+=====================================
+
+June 3, 2024
 
 Deleter 1.0.1
 
@@ -15,7 +24,9 @@ Disk space checker 1.0.1
 
   Fixed SC2164 and SC2086
 
-May 21
+=====================================
+
+May 21, 2024
 
 Downloader 1.0.1
 

@@ -2,12 +2,39 @@
 
 set -e
 
+echo "music-lib Downloader version 1.1"
+
+showhelp() {
+    echo " --help : View this help"
+    echo " --verbose : Verbose output"
+}
+
+is_verbose=0
+
+# arg parsing
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --verbose)
+            is_verbose=1
+            shift
+            ;;
+        --help)
+            showhelp
+            exit 1
+            ;;
+        *)
+            echo "Unrecognized Argument: $1"
+            echo "See $0 --help for help."
+            exit 2
+            ;;
+    esac
+done
+
+# check if yt dlp is installed
 if ! command -v yt-dlp &>/dev/null; then
     echo "E: \`yt-dlp' is not installed, please install it"
     exit 1
 fi
-
-echo "music-lib Downloader version 1.0.1"
 
 oldpwd="$(pwd)"
 
@@ -18,6 +45,12 @@ cd ./music
 PlaylistId="$(< ../PlaylistId.txt tr -d " \t\n\r")"
 echo "Playlist Id: $PlaylistId"
 
-yt-dlp -i "$PlaylistId" --download-archive archive.txt -f bestaudio --progress
+additional_args=""
+
+if [ "$is_verbose" == "1" ]; then
+    additional_args="$additional_args -v"
+fi
+
+yt-dlp -i "$PlaylistId" --download-archive archive.txt -f bestaudio --progress $additional_args
 
 cd "$oldpwd"
