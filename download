@@ -2,7 +2,7 @@
 
 set -e
 
-echo "music-lib Downloader version 1.1"
+echo "music-lib Downloader version 1.2"
 
 showhelp() {
     echo " --help : View this help"
