@@ -2,6 +2,10 @@ music-lib Changelog
 
 July 8, 2024
 
+MP3 converter 1.0
+
+ Initial release
+
 Downloader 1.2
 
  Added --inf-retries flag

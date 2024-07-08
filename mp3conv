@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+
+set -e
+
+echo "music-lib MP3 converter version 1.0"
+
+showhelp() {
+    echo " --help : View this help"
+    echo " --verbose : Verbose output"
+}
+
+is_verbose=0
+
+# arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --verbose)
+            is_verbose=1
+            shift
+            ;;
+        --help)
+            showhelp
+            exit 1
+            ;;
+        *)
+            echo "Unrecognized Argument: $1"
+            echo "See $0 --help for help."
+            exit 2
+            ;;
+    esac
+done
+
+oldpwd="$(pwd)"
+cd "$(dirname "$0")"
+
+ffmpeg_flags=""
+
+if [ "$is_verbose" == "0" ]; then
+    ffmpeg_flags="$ffmpeg_flags -loglevel error"
+fi
+
+# mostly chatgpt code
+
+echo " *==* Converting WebM files *==*"
+for file in ./music/*.webm; do
+    if [[ -f "$file" ]]; then
+        echo " Converting $file"
+        output="./music/$(basename "${file%.*}.mp3")"
+        ffmpeg $ffmpeg_flags -y -i "$file" -q:a 0 "$output"
+    fi
+done
+
+echo " *==* Converting M4A files *==*"
+for file in ./music/*.m4a; do
+    if [[ -f "$file" ]]; then
+        echo " Converting $file"
+        output="./music/$(basename "${file%.*}.mp3")"
+        ffmpeg $ffmpeg_flags -y -i "$file" -q:a 0 "$output"
+    fi
+done
+
+echo "Done converting"
+
+cd "$oldpwd"
