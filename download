@@ -7,15 +7,21 @@ echo "music-lib Downloader version 1.2"
 showhelp() {
     echo " --help : View this help"
     echo " --verbose : Verbose output"
+    echo " --inf-retries : Infinite retries"
 }
 
 is_verbose=0
+inf_retries=0
 
 # arg parsing
 while [[ $# -gt 0 ]]; do
     case $1 in
         --verbose)
             is_verbose=1
+            shift
+            ;;
+        --inf-retries)
+            inf_retries=1
             shift
             ;;
         --help)
@@ -49,6 +55,10 @@ additional_args=""
 
 if [ "$is_verbose" == "1" ]; then
     additional_args="$additional_args -v"
+fi
+
+if [ "$inf_retries" == "1" ]; then
+    additional_args="$additional_args -R infinite"
 fi
 
 yt-dlp -i "$PlaylistId" --download-archive archive.txt -f bestaudio --progress $additional_args
