@@ -1,5 +1,13 @@
 music-lib Changelog
 
+July 8, 2024
+
+Downloader 1.2
+
+ Added --inf-retries flag
+
+====================================
+
 July 1, 2024
 
 Downloader 1.1
