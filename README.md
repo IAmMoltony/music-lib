@@ -16,3 +16,4 @@ Tools for managing my music library
 - `delete.py`: Delete all music. This won't touch anything except for what you downloaded.
 - `redownload`: Delete all music and then download it again.
 - `diskspace`: Show how much disk space music takes up.
+- `mp3conv`: Convert music to MP3 format. Depends on `ffmpeg`.
