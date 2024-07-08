@@ -2,7 +2,7 @@
 
 set -e
 
-echo "music-lib MP3 converter version 1.0"
+echo "music-lib MP3 converter version 1.0.1"
 
 showhelp() {
     echo " --help : View this help"
