@@ -39,6 +39,12 @@ if [ "$is_verbose" == "0" ]; then
     ffmpeg_flags="$ffmpeg_flags -loglevel error"
 fi
 
+# check if ffmpeg is there
+if ! command -v ffmpeg >/dev/null 2>&1; then
+    echo "E: \`ffmpeg' is not installed, please install it"
+    exit 1
+fi
+
 # mostly chatgpt code
 
 echo " *==* Converting WebM files *==*"
