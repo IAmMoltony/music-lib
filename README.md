@@ -17,3 +17,4 @@ Tools for managing my music library
 - `redownload`: Delete all music and then download it again.
 - `diskspace`: Show how much disk space music takes up.
 - `mp3conv`: Convert music to MP3 format. Depends on `ffmpeg`.
+  - Only use this if your player doesn't support WebM and M4A audio formats.
