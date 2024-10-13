@@ -2,7 +2,7 @@
 
 set -e
 
-echo "music-lib Downloader version 1.2"
+echo "music-lib Downloader version 1.3"
 
 showhelp() {
     echo " --help : View this help"
@@ -61,6 +61,6 @@ if [ "$inf_retries" == "1" ]; then
     additional_args="$additional_args -R infinite"
 fi
 
-yt-dlp -i "$PlaylistId" --download-archive archive.txt -f bestaudio --progress $additional_args
+yt-dlp -i "$PlaylistId" --download-archive archive.txt -f bestaudio --progress -o "%(title)s.%(ext)s" $additional_args
 
 cd "$oldpwd"

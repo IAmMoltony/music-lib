@@ -18,3 +18,5 @@ Tools for managing my music library
 - `diskspace`: Show how much disk space music takes up.
 - `mp3conv`: Convert music to MP3 format. Depends on `ffmpeg`.
   - Only use this if your player doesn't support WebM and M4A audio formats.
+- `strip-video-ids.py`: Remove video IDs from every music file. Expected to be run in `./music`.
+  - e.g.: if a music file name is "Song [1234567890_].m4a", it'll change it to just "Song.m4a".
