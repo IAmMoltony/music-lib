@@ -7,12 +7,17 @@ Tools for managing my music library
 ## Installation
 
 1. Clone this repo
-1. Create a file called `PlaylistId.txt` and paste your YouTube music playlist ID there
+1. Install `yt-dlp`: `pip install yt-dlp`
+1. Create a file called `PlaylistId.txt` with the following syntax. You can add multiple playlists.
+   ```
+   <youtube playlist ID> <folder to output>
+   ...
+   ```
 1. Done
 
 ## Scripts
 
-- `download`: Download the music into `./music`. Depends on `yt-dlp`.
+- `download`: Download the music from one or more playlists. Depends on `yt-dlp`.
 - `delete.py`: Delete all music. This won't touch anything except for what you downloaded.
 - `redownload`: Delete all music and then download it again.
 - `diskspace`: Show how much disk space music takes up.
